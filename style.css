@@ -1,0 +1,264 @@
+:root {
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 65px 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    flex: 1;
+}
+
+ul.menu {
+    list-style: none;
+    display: flex;
+}
+
+ul.menu > li:not(:last-child) {
+    margin-right: 40px;
+}
+
+ul.menu > li > a {
+    text-decoration: none;
+    color: var(--dark-grayish-blue);
+}
+
+ul.menu > li > a:hover {
+    color: var(--soft-red);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin-top: 45px;
+}
+
+.column-1 {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.column-1 .img-container > img{
+    width: 100%;
+}
+
+.news-row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.news-left {
+    flex: 1;
+    color: var(--very-dark-blue);
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.news-right p {
+    color: var(--grayish-blue);
+    font-size: 15px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.news-right > a {
+    background-color: var(--soft-red);
+    text-transform: uppercase;
+    color: var(--off-white);
+    text-decoration: none;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.news-right > a:hover {
+    background-color: var(--very-dark-blue);
+}
+
+.column-2 {
+    background-color: var(--very-dark-blue);
+    padding: 0 30px;
+}
+
+.block-row {
+    color: var(--off-white);
+    padding: 20px 0;
+}
+
+.block-row:not(first-child) {
+    padding: 5px 0;
+}
+
+.block-row:not(:last-child) {
+    border-bottom: 1px solid var(--grayish-blue);
+}
+
+.block-row > h2 {
+    font-size: 19px;
+}
+
+.block-row > h2:hover {
+    color: var(--soft-orange);
+    cursor: pointer;
+}
+
+.block-row > p {
+    font-weight: 400;
+    color: var(--grayish-blue);
+    font-size: 15px;
+}
+
+h1.title {
+    color: var(--soft-orange);
+}
+
+.container-pic {
+    margin-top: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pic-col {
+    width: 33.33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pic-container {
+    width: 30%;
+}
+
+.content {
+    width: 70%;
+}
+
+.pic-col .pic-container > img {
+    width: 100px;
+}
+
+.content {
+    padding-left: 10px;
+}
+
+.pic-col .content > h1 {
+    font-size: 22px;
+    color: var(--grayish-blue);
+}
+
+.pic-col .content > h2 {
+    color: var(--very-dark-blue);
+    font-size: 15px;
+}
+
+.pic-col .content > h2:hover {
+    color: var(--soft-red);
+    cursor: pointer;
+}
+
+.pic-col .content > p {
+    color: var(--dark-grayish-blue);
+    font-size: 12px;
+}
+
+#menu {
+    display: none;
+    cursor: pointer;
+}
+
+#close {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1040px) {
+    .pic-container {
+        width: 10%;
+    }
+    .content {
+        width: 50%;
+    }
+}
+
+@media(max-width: 768px) {
+    body {
+        padding: 15px 25px;
+    }
+    .container {
+        grid-template-columns: 100%;
+    }
+    .news-row {
+        grid-template-columns: 100%;
+    }
+    .news-right {
+        margin-bottom: 40px;
+    }
+    .news-right > p {
+        line-height: 1.8;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+    .pic-col  {
+        width: 100%;
+    }
+    .pic-col:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    ul.menu {
+        background-color: var(--off-white);
+        z-index: 2;
+        width: 50%;
+        height: 100vh;
+        position: fixed;
+        top: -16px;
+        right: 0;
+        padding: 20px;
+        display: none;
+    }
+
+    ul.menu > li {
+        padding-bottom: 25px;
+    }
+    ul.menu > li > a {
+        font-weight: 500;
+    }
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.3);
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    #menu {
+        display: inline;
+    }
+    #close {
+        display: block;
+        float: right;
+    }
+}
